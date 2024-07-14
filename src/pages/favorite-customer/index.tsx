@@ -18,6 +18,7 @@ import { Input } from "@/components/ui/input";
 import { useSession } from 'next-auth/react';
 import toast from 'react-hot-toast';
 import { api } from '@/utils/api';
+import PageLayout from '@/components/PageLayout';
 
 const formSchema = z.object({
     firstName: z.string(),
@@ -63,9 +64,9 @@ export default function Index()
     }
 
     return (
-        <div>
+        <PageLayout title="العملاء الدائمين">
             <Form { ...form }>
-                <form onSubmit={ form.handleSubmit(onSubmit) } className="space-y-8">
+                <form onSubmit={ form.handleSubmit(onSubmit) } className="w-[264px] m-auto space-y-8">
                     <FormField
                         control={ form.control }
                         name="firstName"
@@ -108,7 +109,7 @@ export default function Index()
                     <Button type="submit">Submit</Button>
                 </form>
             </Form>
-        </div>
+        </PageLayout>
     );
 }
 

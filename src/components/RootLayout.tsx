@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useState } from "react";
 // import SideMenu from "./sideMenu";
 import { useSession } from "next-auth/react";
@@ -9,7 +10,7 @@ import SideBar from "./SideBar";
 
 const cairo = Cairo({ weight: "600", subsets: ['arabic'] });
 
-export default function Layout({ children })
+export default function Layout({ children }: { children: any; })
 {
     const [sideMenu, setSideMenu] = useState(true);
     const { data: session, status } = useSession();

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 'use client';
 import { useState } from "react";
 
@@ -11,7 +12,7 @@ import PageTitle from "./PageTitle";
 
 const cairo = Cairo({ weight: "600", subsets: ['arabic'] });
 
-export default function PageLayout({ children, title })
+export default function PageLayout({ children, title }: { children: any, title: string; })
 {
     const [sideMenu, setSideMenu] = useState(true);
     const { status } = useSession();

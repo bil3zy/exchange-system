@@ -105,6 +105,9 @@ importers:
         specifier: ^4.5.4
         version: 4.5.4(@types/react@18.3.3)(react@18.3.1)
     devDependencies:
+      '@types/bcryptjs':
+        specifier: ^2.4.6
+        version: 2.4.6
       '@types/eslint':
         specifier: ^8.56.10
         version: 8.56.10
@@ -829,6 +832,9 @@ packages:
 
   '@trpc/server@11.0.0-rc.452':
     resolution: {integrity: sha512-sqZ2Nmh9hD/xuW5x/9tLoa7N1k/99B0eCDoVdbVtnMQZ0gH79vlLQXrbIPg6BZxu/h1i/jyHWXBmFMqN2JZ6xw==}
+
+  '@types/bcryptjs@2.4.6':
+    resolution: {integrity: sha512-9xlo6R2qDs5uixm0bcIqCeMCE6HiQsIyel9KQySStiyqNl2tnj2mP3DX1Nf56MD6KMenNNlBBsy3LJ7gUEQPXQ==}
 
   '@types/cookie@0.6.0':
     resolution: {integrity: sha512-4Kh9a6B2bQciAhf7FSuMRRkUWecJgJu9nPnx3yzpsfXX/c50REIqpHY4C82bXP90qrLtXtkDxTZosYO3UpOwlA==}
@@ -3269,6 +3275,8 @@ snapshots:
       react-dom: 18.3.1(react@18.3.1)
 
   '@trpc/server@11.0.0-rc.452': {}
+
+  '@types/bcryptjs@2.4.6': {}
 
   '@types/cookie@0.6.0': {}
 

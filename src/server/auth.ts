@@ -1,3 +1,7 @@
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
+/* eslint-disable @typescript-eslint/no-unsafe-call */
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
 import { PrismaAdapter } from "@auth/prisma-adapter";
 import { type GetServerSidePropsContext } from "next";
 
@@ -36,10 +40,20 @@ declare module "next-auth" {
     } & DefaultSession["user"];
   }
 
-  // interface User {
-  //   // ...other properties
-  //   // role: UserRole;
-  // }
+  interface User
+  {
+    // ...other properties
+    // role: UserRole;
+    scope: string;
+    username: string;
+    exchange: {
+      id: string;
+    };
+    user: {
+      firstName: string;
+      lastName: string;
+    };
+  }
 }
 
 /**

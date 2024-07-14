@@ -49,7 +49,7 @@ export default function Index()
     const createFund = api.funds.create.useMutation();
     const { data: sessionData } = useSession();
     const getFunds = api.funds.getAll.useQuery({
-        exchangeId: sessionData?.user?.exchangeId,
+        exchangeId: sessionData?.user?.exchangeId ?? "",
     });
     const deleteFunds = api.funds.delete.useMutation();
     async function onSubmit(values: z.infer<typeof formSchema>)
@@ -58,7 +58,7 @@ export default function Index()
         await createFund.mutateAsync({
             amount: Number(values.amount),
             currency: values.currency,
-            exchangeId: sessionData?.user?.exchangeId,
+            exchangeId: sessionData?.user?.exchangeId ?? "",
         }).then(async () =>
         {
             toast.success('تم الحفظ بنجاح');

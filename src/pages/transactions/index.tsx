@@ -49,7 +49,7 @@ export default function Index()
             amount: "",
             currencySold: "",
             currencyBought: "",
-            exchangeRate: 0,
+            exchangeRate: '',
             date: new Date().toISOString(),
             favoriteCustomerId: "",
             exchangeId: "",
@@ -60,15 +60,15 @@ export default function Index()
     console.log(sessionData);
     const createTransaction = api.transactions.create.useMutation();
     const getFavoriteCustomer = api.favoriteCustomer.getAll.useQuery({
-        exchangeId: sessionData?.user?.exchangeId
+        exchangeId: sessionData?.user?.exchangeId ?? ""
     });
     const getFunds = api.funds.getAll.useQuery({
 
-        exchangeId: sessionData?.user?.exchangeId
+        exchangeId: sessionData?.user?.exchangeId ?? ""
     });
 
     const getTransactions = api.transactions.getAll.useQuery({
-        exchangeId: sessionData?.user?.exchangeId
+        exchangeId: sessionData?.user?.exchangeId ?? ""
     });
     async function onSubmit(values: z.infer<typeof formSchema>)
     {
